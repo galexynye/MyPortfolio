@@ -1,15 +1,16 @@
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlay, faPause, faStepBackward, faStepForward, faVolumeOff, faStop, faDownload, faCopy, faPlus, faMinus, faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes, faTimesCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes, faTimesCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faVuejs, faGithub, faCodepen, faFreeCodeCamp, faImdb, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
 library.add(
-  faPlay, faPause, faStepBackward, faStepForward, faVolumeOff, faStop, faDownload,
-  faCopy, faPlus, faMinus, faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes,
-  faTimesCircle, faInfoCircle,
+  faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes,
+  faTimesCircle, faInfoCircle, faVuejs, faGithub, faCodepen, faFreeCodeCamp, faImdb,
+  faYoutube,
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
