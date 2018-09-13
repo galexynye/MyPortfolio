@@ -1,0 +1,27 @@
+$alex-colors: (
+  'text': #3b3a3a,
+  'primary': #20bf55,
+  // 'accent': #01baef,
+  'accent': #6ada90,
+  'secondary': #2184a5,
+  'foreground': #757575,
+  'background': #ffffff,
+);
+
+@function alex-color($key: 'primary') {
+  @return map-get($alex-colors, $key);
+}
+
+$dark-colors: (
+  'primary': #5d5d5d,
+  'accent': #c9c9c9,
+  'background': #262626,
+);
+
+@function dark-color($key: 'primary') {
+  @return map-get($dark-colors, $key);
+}
+
+$text: alex-color('text');
+$primary: alex-color('primary');
+

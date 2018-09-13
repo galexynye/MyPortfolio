@@ -1,7 +1,7 @@
 <template>
     <div>
           <a v-for="x in social" :key="x.icon[1]" :href="x.link" target="blank">
-            <font-awesome-icon :icon='x.icon' />
+            <font-awesome-icon :icon='x.icon' size="lg" />
           </a>
     </div>
 </template>
@@ -38,5 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>
