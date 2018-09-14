@@ -1,26 +1,50 @@
 <template>
-    <div>
-        portfolio
-        <!-- <img :src="portfolio[0].img" alt=""> -->
+    <div id="portfolio" class="section">
         <div class="workContainer" v-for="work in portfolio" :key="work.title" >
-            <img :src="work.image" alt="">
-            <div class="overlay">
-                <div class="overlayTitle">{{work.title}}</div>
-                <div class="overlayCaption">{{work.caption}}</div>
-            </div>
+            <portfolio-web-display :work="work" :bgColor="work.color"/>
+        </div>
+        <div>
+            <p data-height="265" data-theme-id="0" data-slug-hash="mGMKYz" data-default-tab="result" data-user="galexynye" data-pen-title="Drum Machine in React (low latency)" class="codepen">See the Pen <a href="https://codepen.io/galexynye/pen/mGMKYz/">Drum Machine in React (low latency)</a> by Alex Nye (<a href="https://codepen.io/galexynye">@galexynye</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="bxaoRo" data-default-tab="result" data-user="galexynye" data-pen-title=" Mark Down Previewer in React" class="codepen">See the Pen <a href="https://codepen.io/galexynye/pen/bxaoRo/"> Mark Down Previewer in React</a> by Alex Nye (<a href="https://codepen.io/galexynye">@galexynye</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
         </div>
     </div>
 </template>
 
 <script>
+import PortfolioWebDisplay from '../components/PortfolioWebDisplay.vue';
+
 export default {
+  components: {
+    PortfolioWebDisplay,
+  },
   data() {
     return {
       portfolio: [
         {
           title: 'Grimm Forest',
-          image: require('../assets/GFM_BlackBGWhiteTree_500x500.png'),
+          image: require('../assets/WebSites/GFM/GFM_WhiteTree_809x500.png'),
           caption: 'A Music website with a searchable playlist made with VueJs and AWS for the backend.\n \n Work in progress.',
+          color: '#11191b',
+        },
+        {
+          title: 'Midi Sequencing',
+          image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
+          caption: 'A site that teaches music production made with Gatsby.js and deployed with CI via Github and Netifly.',
+          color: '#fbd703',
+        },
+      ],
+      apps: [
+        {
+          title: 'Drum Machine(Low Latency)',
+          dataSlugHash: 'mGMKYz',
+          href: 'https://codepen.io/galexynye/pen/mGMKYz/',
+        },
+        {
+          title: 'Midi Sequencing',
+          image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
+          caption: 'A site that teaches music production made with Gatsby.js and deployed with CI via Github and Netifly.',
+          color: '#fbd703',
         },
       ],
 
@@ -43,57 +67,24 @@ Apps
 
 */
 
+
 </script>
 
 <style lang="scss" scoped>
+
+    $workWidth: 800px;
+
+    #portfolio {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+
      .workContainer {
         position: relative;
-        margin-bottom:15px;
-        width: 500px;
+        margin: 6px;
+        width: $workWidth;
 
     }
 
-    img {
-        display: block;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: alex-color('accent');
-        /* background-color: rgb(61, 189, 61); */
-    }
-
-    .workContainer:hover .overlay {
-        opacity: .99;
-        cursor: pointer;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .overlayTitle {
-        color: $text;
-        font-size: 2.5em;
-        font-weight: bold;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        text-align: center;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-    }
-    .overlayCaption {
-        color: $text;
-        position: absolute;
-        bottom: 0%;
-        padding: 20px;
-
-    }
 </style>
