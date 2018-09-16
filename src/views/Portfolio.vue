@@ -2,20 +2,20 @@
     <div >
       <!-- <portfolio-sites-masonry /> -->
       <portfolio-sites />
-      <portfolio-apps />
+      <portfolio-Projects />
     </div>
 </template>
 
 <script>
-import PortfolioSites from '../components/PortfolioSites.vue';
-import PortfolioApps from '../components/PortfolioApps.vue';
+import PortfolioSites from '@/components/PortfolioSites.vue';
+import PortfolioProjects from '../components/PortfolioProjects.vue';
 import PortfolioSitesMasonry from '../components/PortfolioSitesMasonry.vue';
 
 export default {
   components: {
     PortfolioSitesMasonry,
     PortfolioSites,
-    PortfolioApps,
+    PortfolioProjects,
   },
   data() {
     return {
@@ -23,23 +23,6 @@ export default {
     };
   },
 };
-/*
-Sites
-- Pictures Featuring the site
-- On hover there is an overlay
-    - Grimm Forest
-    - Portfolio Site
-    - Midi Sequencing
-    - Hudson Street Cottage
-    - Validating Phone numbers
-
-Apps
-    - Just Lists of text
-    - Clicking on a text will animating in a component below
-
-*/
-
-
 </script>
 
 <style lang="scss" scoped>

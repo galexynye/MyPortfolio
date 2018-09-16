@@ -25,9 +25,13 @@ $dark-colors: (
 $text: alex-color('text');
 $primary: alex-color('primary');
 $accent: alex-color('accent');
+$background: alex-color('background');
 $foreground: alex-color('foreground');
 $dark-text: dark-color('primary');
+$dark-accent: dark-color('accent');
+$dark-background: dark-color('background');
 
+$primary-font: 'Avenir';
 
 $section-width: 1400px;
 $section-column-width: $section-width/2 - 20px;

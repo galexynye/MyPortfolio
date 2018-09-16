@@ -20,7 +20,7 @@
                     </div>
                 </div>
         </div>
-        <div class="section">
+        <!-- <div class="section">
                 <div class="workContainer section-column">
                     <img :src="portfolio[1].image" alt="">
                     <div class='overlay' :style="{'background-color': portfolio[1].color}">
@@ -35,7 +35,7 @@
                         <p class="overlayCaption">{{portfolio[2].caption}}</p>
                     </div>
                 </div>
-        </div>
+        </div> -->
         <!-- <div id="websites" class="section">
             <div class="workContainer section-column" v-for="work in portfolio" :key="work.title" >
             <img :src="work.image" alt="">

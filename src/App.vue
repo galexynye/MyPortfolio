@@ -13,7 +13,6 @@
 * {
   margin: 0px;
   padding: 0px;
-
 }
 
 .subject {
@@ -39,10 +38,17 @@
   width: $section-column-width;
 }
 
+.section-column__flex {
+  @extend .section-column;
+  display: flex;
+  flex-flow: column;
+}
+
 .section-title {
   color:$foreground;
   font-size: 1.2rem;
-  margin-bottom: -5px;
+  text-decoration: underline;
+  // margin-bottom: -5px;
 }
 
 

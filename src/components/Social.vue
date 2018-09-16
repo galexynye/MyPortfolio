@@ -1,8 +1,11 @@
 <template>
-    <div>
-          <a v-for="x in social" :key="x.icon[1]" :href="x.link" target="blank">
-            <font-awesome-icon :icon='x.icon' size="lg" />
-          </a>
+    <div class="social">
+        <a href="mailto:g.alexander.nye@gmail.com">g.alexander.nye@gmail.com</a>
+        <div>
+            <a v-for="x in social" :key="x.icon[1]" :href="x.link" target="blank">
+                <font-awesome-icon :icon='x.icon' size="lg" />
+            </a>
+        </div>
     </div>
 </template>
 
@@ -38,6 +41,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .social{
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
 
+    background-color: $dark-background;
+    a {
+      padding: 5px;
+      color: $dark-text;
+      &:hover {
+          color: $accent;
+      }
+    }
+  }
 
 </style>

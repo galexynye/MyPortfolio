@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes, faTimesCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { faVuejs, faGithub, faCodepen, faFreeCodeCamp, faImdb, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faVuejs, faReact, faSass, faGithub, faCodepen, faFreeCodeCamp, faImdb, faYoutube, faJs } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueMasonryPlugin } from 'vue-masonry';
 import App from './App.vue';
@@ -10,8 +10,8 @@ import store from './store';
 
 library.add(
   faCompactDisc, faShoppingCart, faAngleLeft, faAngleRight, faBars, faTimes,
-  faTimesCircle, faInfoCircle, faVuejs, faGithub, faCodepen, faFreeCodeCamp, faImdb,
-  faYoutube,
+  faTimesCircle, faInfoCircle, faVuejs, faReact, faSass, faGithub, faCodepen, faFreeCodeCamp, faImdb,
+  faYoutube, faJs,
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
