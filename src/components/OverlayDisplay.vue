@@ -1,10 +1,15 @@
 <template>
-    <div>
-        <img :src="work.image" alt="">
-        <div class='overlay' :style="{'background-color': bgColor}">
+    <div class="section">
+        <div  class="work">
+        <div class="workContainer" v-for="work in portfolio" :key="work.title" >
+           <img :src="work.image" alt="">
+                 <div class='overlay' :style="{'background-color': work.color}">
             <h2 class="overlayTitle">{{work.title}}</h2>
             <p class="overlayCaption">{{work.caption}}</p>
         </div>
+        </div>
+        </div>
+
     </div>
 </template>
 
@@ -12,11 +17,12 @@
 
 export default {
   props: {
-    work: Object,
-    bgColor: String,
+    // work: Object,
+    // bgColor: String,
   },
   data() {
     return {
+      // Data should be an array
     };
   },
 };
@@ -24,6 +30,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    $workWidth: 800px;
+
+    .work {
+        display: flex;
+        // flex-flow: wrap;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+
+       .workContainer {
+        position: relative;
+        margin: auto;
+        width: $workWidth;
+    }
 
     img {
         display: block;
@@ -65,10 +87,11 @@ export default {
         position: absolute;
         bottom: 0%;
         padding: 20px;
+        text-align: center;
 
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 600px) {
         .overlayTitle{
             top: 30%;
         }

@@ -16,6 +16,36 @@
 
 }
 
+.subject {
+  margin-bottom: 60px;
+}
+
+.section {
+  max-width: $section-width;
+  margin: auto;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+
+.section-solo {
+  margin: 10px;
+}
+
+.section-column {
+  margin: 10px;
+  width: $section-column-width;
+}
+
+.section-title {
+  color:$foreground;
+  font-size: 1.2rem;
+  margin-bottom: -5px;
+}
+
+
 body {
   background-color: alex-color('background');
 }
@@ -44,6 +74,17 @@ a {
     font-weight: bold;
     &.router-link-exact-active {
       color: alex-color('accent');
+    }
+  }
+
+// NOTE: THIS MEDIA QUERY IS NOT RECOGNIZED INSIDE COMPONENTS, MUST BE COPIED INTO COMPONENTS
+  @media screen and (max-width: 900px) {
+    .section {
+      flex-wrap: wrap;
+    }
+    .section-column {
+      margin: 10px;
+      width: 600px;
     }
   }
 
