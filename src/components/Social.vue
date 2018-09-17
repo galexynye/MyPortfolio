@@ -48,7 +48,7 @@ export default {
 
     background-color: $dark-background;
     a {
-      padding: 5px;
+      margin: 10px;
       color: $dark-text;
       &:hover {
           color: $accent;

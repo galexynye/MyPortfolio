@@ -16,10 +16,6 @@
   overflow-x: hidden;
 }
 
- canvas{
-            display: block;
-        }
-
 .subject {
   margin-bottom: 60px;
 }
