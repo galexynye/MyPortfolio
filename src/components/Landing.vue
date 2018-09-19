@@ -1,6 +1,6 @@
 <template>
   <div id="landing">
-    <p>I'm the landing</p>
+    <!-- <p>I'm the landing</p> -->
   </div>
 </template>
 

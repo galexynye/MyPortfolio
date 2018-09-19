@@ -163,7 +163,7 @@ export default {
 
     h1 {
       color: $primary;
-      margin-top: -10px;
+      margin-top: 0px;
     //   text-decoration: underline;
     }
 

@@ -96,7 +96,7 @@ export default {
     img {
         display: block;
         max-width: 100%;
-        opacity: .6;
+        opacity: .8;
     }
 
     .overlay {
