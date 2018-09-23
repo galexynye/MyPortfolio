@@ -64,7 +64,7 @@ export default {
         {
           title: 'Midi Sequencing',
           image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
-          caption: 'A blog about music production made with Gatsby.js/React that is deployed with CI via Github and Netifly.',
+          caption: 'A blog about music production made with Gatsby.js/React and deployed with CI via Github and Netifly.',
           color: '#fbd703',
         },
         {
@@ -106,7 +106,7 @@ export default {
         left: 0;
         right: 0;
         height: 100%;
-        width: 100%;
+        max-width: 100%;
         opacity: 0;
         transition: .5s ease;
         // background-color: alex-color('accent');

@@ -42,14 +42,31 @@ export default {
         y: undefined,
       };
 
-      window.addEventListener(
-        'mousemove',
-        (event) => {
-          mouse.x = event.x;
-          mouse.y = event.y;
-        // console.log(mouse);
-        },
-      );
+      // window.addEventListener(
+      //   'mousemove',
+      //   (event) => {
+      //     mouse.x = event.x;
+      //     mouse.y = event.y;
+      //   // console.log(mouse);
+      //   },
+      // );
+
+      function getMousePos(evt) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+          x: (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+          y: (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height,
+          r: rect,
+        };
+      }
+
+      canvas.addEventListener('mousemove', (evt) => {
+        const mousePos = getMousePos(evt);
+        console.log(mousePos.r);
+        mouse.x = mousePos.x;
+        mouse.y = mousePos.y;
+      }, false);
+
 
       // x is x position, y is y position, spaceX is how far it moves on the x axis (for posisitioning next to other letters)
       class Text {
@@ -96,8 +113,8 @@ export default {
           } else if (this.morph > 0) {
             this.morph -= 10;
           }
-          // this.x += 1;
           this.draw();
+          // this.x += 1;
         }
       }
 
@@ -183,22 +200,35 @@ export default {
         constructor(x, y, color, scale, spaceX, spaceY) {
           super(x, y, color, scale, spaceX, spaceY);
           this.draw = this.draw.bind(this);
+          this.morph = 1000;
+          this.update = this.update.bind(this);
         }
         draw() {
           const sx = this.s * this.spaceX;
           const sy = this.s * this.spaceY;
           // Draw X
           c.beginPath();
-          c.moveTo(0 * this.s + this.x + sx, 300 * this.s + this.y + sy);
-          c.lineTo(100 * this.s + this.x + sx, 0 * this.s + this.y + sy);
+          c.moveTo(0 * this.s + this.x + sx + this.morph, 300 * this.s + this.y + sy + this.morph);
+          c.lineTo(100 * this.s + this.x + sx, 0 * this.s + this.y + sy - this.morph);
           c.strokeStyle = this.color;
           c.stroke();
           // X dash 2
           c.beginPath();
-          c.moveTo(0 * this.s + this.x + sx, 0 * this.s + this.y + sy);
-          c.lineTo(100 * this.s + this.x + sx, 300 * this.s + this.y + sy);
+          c.moveTo(0 * this.s + this.x + sx - this.morph, 0 * this.s + this.y + sy);
+          c.lineTo(100 * this.s + this.x + sx, 300 * this.s + this.y + sy - this.morph);
           c.strokeStyle = this.color;
           c.stroke();
+        }
+        update() {
+          if ((mouse.x + 150 * this.s) - this.x < 300 && mouse.x - this.x > -50 && (mouse.y - 150 * this.s) - this.y < (150 * this.s) && mouse.y - this.y > -50) {
+            if (this.morph < 1000) {
+              this.morph += 10;
+            }
+          } else if (this.morph > 0) {
+            this.morph -= 10;
+          }
+          // this.x += 1;
+          this.draw();
         }
       }
 
@@ -207,17 +237,30 @@ export default {
         constructor(x, y, color, scale, spaceX, spaceY) {
           super(x, y, color, scale, spaceX, spaceY);
           this.draw = this.draw.bind(this);
+          this.morph = 1000;
+          this.update = this.update.bind(this);
         }
         draw() {
           const sx = this.s * this.spaceX;
           const sy = this.s * this.spaceY;
           c.beginPath();
-          c.moveTo(0 * this.s + this.x + sx, 300 * this.s + this.y + sy);
-          c.lineTo(0 * this.s + this.x + sx, 0 * this.s + this.y + sy);
-          c.lineTo(110 * this.s + this.x + sx, 300 * this.s + this.y + sy);
-          c.lineTo(110 * this.s + this.x + sx, 0 * this.s + this.y + sy);
+          c.moveTo(0 * this.s + this.x + sx + this.morph, 300 * this.s + this.y + sy - this.morph);
+          c.lineTo(0 * this.s + this.x + sx - this.morph, 0 * this.s + this.y + sy);
+          c.lineTo(110 * this.s + this.x + sx, 300 * this.s + this.y + sy + this.morph);
+          c.lineTo(110 * this.s + this.x + sx + this.morph, 0 * this.s + this.y + sy - this.morph);
           c.strokeStyle = this.color;
           c.stroke();
+        }
+        update() {
+          if ((mouse.x + 150 * this.s) - this.x < 300 && mouse.x - this.x > -50 && (mouse.y - 150 * this.s) - this.y < (150 * this.s) && mouse.y - this.y > -50) {
+            if (this.morph < 1000) {
+              this.morph += 10;
+            }
+          } else if (this.morph > 0) {
+            this.morph -= 10;
+          }
+          // this.x += 1;
+          this.draw();
         }
       }
 
@@ -225,23 +268,36 @@ export default {
         constructor(x, y, color, scale, spaceX, spaceY) {
           super(x, y, color, scale, spaceX, spaceY);
           this.draw = this.draw.bind(this);
+          this.morph = 1000;
+          this.update = this.update.bind(this);
         }
         draw() {
           const sx = this.s * this.spaceX;
           const sy = this.s * this.spaceY;
           // Letter Y
           c.beginPath();
-          c.moveTo(55 * this.s + this.x + sx, 140 * this.s + this.y + sy);
-          c.lineTo(55 * this.s + this.x + sx, 300 * this.s + this.y + sy);
+          c.moveTo(55 * this.s + this.x + sx + this.morph, 140 * this.s + this.y + sy);
+          c.lineTo(55 * this.s + this.x + sx - this.morph, 300 * this.s + this.y + sy);
           c.strokeStyle = this.color;
           c.stroke();
           // Letter Y
           c.beginPath();
-          c.moveTo(0 * this.s + this.x + sx, 0 * this.s + this.y + sy);
-          c.lineTo(55 * this.s + this.x + sx, 140 * this.s + this.y + sy);
-          c.lineTo(108 * this.s + this.x + sx, 0 * this.s + this.y + sy);
+          c.moveTo(0 * this.s + this.x + sx - this.morph, 0 * this.s + this.y + sy + this.morph);
+          c.lineTo(55 * this.s + this.x + sx, 140 * this.s + this.y + sy + this.morph);
+          c.lineTo(108 * this.s + this.x + sx + this.morph, 0 * this.s + this.y + sy - this.morph);
           c.strokeStyle = this.color;
           c.stroke();
+        }
+        update() {
+          if ((mouse.x + 150 * this.s) - this.x < 300 && mouse.x - this.x > -50 && (mouse.y - 150 * this.s) - this.y < (150 * this.s) && mouse.y - this.y > -50) {
+            if (this.morph < 1000) {
+              this.morph += 10;
+            }
+          } else if (this.morph > 0) {
+            this.morph -= 10;
+          }
+          // this.x += 1;
+          this.draw();
         }
       }
       // function WordAlex(x, y, color = 'black', scale = 1) {
@@ -264,16 +320,28 @@ export default {
       // }
 
 
-      const TheA1 = new LetterA(200, 100, 'blue');
-      const TheL1 = new LetterL(340, 100, 'green');
-      const TheE1 = new LetterE(435, 100);
+      const TheA1 = new LetterA(450, 100, 'blue');
+      const TheL1 = new LetterL(590, 100, 'green');
+      const TheE1 = new LetterE(685, 100, 'purple');
+      const TheX1 = new LetterX(780, 100, 'red');
+      const TheN1 = new LetterN(780, 420, 'green');
+      const TheY1 = new LetterY(915, 420, 'orange');
+      const TheE2 = new LetterE(1045, 420, 'purple');
       // const TheA = WordAlex();
       function animate() {
         requestAnimationFrame(animate);
         c.clearRect(0, 0, canvas.width, canvas.height);
+
         TheA1.update();
         TheL1.update();
         TheE1.update();
+        TheX1.update();
+        TheN1.update();
+        TheY1.update();
+        TheE2.update();
+
+
+        console.log(window.scrollY);
       }
 
       animate();
