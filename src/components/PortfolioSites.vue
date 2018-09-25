@@ -5,18 +5,21 @@
         </div>
         <div class="section">
                 <div class="workContainer section-column">
-                    <img :src="portfolio[0].image" alt="">
-                    <div class='overlay' :style="{'background-color': portfolio[0].color}">
-                        <h2 class="overlayTitle">{{portfolio[0].title}}</h2>
-                        <p class="overlayCaption">{{portfolio[0].caption}}</p>
-                    </div>
+                    <a href="http://grimmforestmusic.com.s3-website-us-east-1.amazonaws.com" target="blank"><img :src="portfolio[0].image" alt="">
+                        <div class='overlay' :style="{'background-color': portfolio[0].color}">
+                            <h2 class="overlayTitle">{{portfolio[0].title}}</h2>
+                            <p class="overlayCaption">{{portfolio[0].caption}}</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="workContainer section-column">
-                    <img :src="portfolio[1].image" alt="">
-                    <div class='overlay' :style="{'background-color': portfolio[1].color}">
-                        <h2 class="overlayTitle">{{portfolio[1].title}}</h2>
-                        <p class="overlayCaption">{{portfolio[1].caption}}</p>
-                    </div>
+                    <a href="https://www.midisequencing.com/">
+                        <img :src="portfolio[1].image" alt="">
+                        <div class='overlay' :style="{'background-color': portfolio[1].color}">
+                            <h2 class="overlayTitle">{{portfolio[1].title}}</h2>
+                            <p class="overlayCaption">{{portfolio[1].caption}}</p>
+                        </div>
+                    </a>
                 </div>
         </div>
         <!-- <div class="section">
@@ -57,25 +60,13 @@ export default {
         {
           title: 'Grimm Forest',
           image: require('../assets/WebSites/GFM/GFM_WhiteTree_809x500.png'),
-          caption: 'A music website with a searchable playlist made with VueJs and AWS for the backend.\n \n Work in progress.',
+          caption: 'A music website with a searchable playlist / custom playlist feature that is stored on local storage. Features a music player that renders waveforms. Made with VueJs and AWS for the backend. Work in progress.',
           color: '#11191b',
         },
         {
           title: 'Midi Sequencing',
           image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
-          caption: 'A blog about music production made with Gatsby.js/React and deployed with CI via Github and Netifly.',
-          color: '#fbd703',
-        },
-        {
-          title: 'Grimm Forest',
-          image: require('../assets/WebSites/GFM/GFM_WhiteTree_809x500.png'),
-          caption: 'A music website with a searchable playlist made with VueJs and AWS for the backend.\n \n Work in progress.',
-          color: '#11191b',
-        },
-        {
-          title: 'Midi Sequencing',
-          image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
-          caption: 'A blog about music production made with Gatsby.js/React that is deployed with CI via Github and Netifly.',
+          caption: 'A blog about music production in the process of an upgrade to the JAMstack with with Gatsby.js/React. This version was made with Wordpress.',
           color: '#fbd703',
         },
       ],

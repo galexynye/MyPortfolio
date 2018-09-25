@@ -32,7 +32,7 @@ export default {
 }
 
 .subject {
-  margin: 75px 30px;
+  margin: 20px 30px 75px 30px;
 }
 
 .section {
@@ -87,8 +87,6 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #222222;
-
-  // color: #2c3e50;
 }
 #nav {
   padding: 30px;
@@ -109,25 +107,5 @@ a {
       width: 600px;
     }
   }
-
-
-// $scotch-colors: (
-//   'primary': #8e3329,
-//   'accent': #d98328,
-//   'secondary': #5a1321,
-//   'foreground': #191919,
-//   'background': #e9e9e9
-// );
-// $alex-colors: (
-//   'text': #3b3a3a,
-//   'primary': #0b4f6c,
-//   // 'accent': #01baef,
-//   'accent': #6ada90,
-//   'secondary': #20bf55,
-//   'foreground': #757575,
-//   'background': #ffffff,
-// );
-
-
 }
 </style>

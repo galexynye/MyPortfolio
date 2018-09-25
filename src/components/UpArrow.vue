@@ -13,7 +13,7 @@ export default {
   },
   mounted() {
     function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.getElementById('up-arrow').style.display = 'block';
       } else {
         document.getElementById('up-arrow').style.display = 'none';
@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
   #up-arrow{
     position: fixed;
+    display: none;
     bottom: 25px;
     right: 25px;
     color: $text;

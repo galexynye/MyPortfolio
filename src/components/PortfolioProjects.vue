@@ -1,5 +1,5 @@
 <template>
-<div class="subject" >
+<div class="subject">
     <div class="section">
         <h2 class="section-solo section-title">Web Projects</h2>
     </div>
@@ -33,7 +33,6 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
             </div>
         </div>
@@ -158,7 +157,7 @@ export default {
 
 <style lang="scss" scoped>
 
-    $height-tall: 600px;
+    // $height-tall: 600px;
 
     h1 {
       color: $primary;
@@ -166,9 +165,9 @@ export default {
     //   text-decoration: underline;
     }
 
-    iframe {
-      height: $height-tall;
-    }
+    // iframe {
+    //   height: $height-tall;
+    // }
 
     ul {
         list-style: none;
@@ -198,7 +197,7 @@ export default {
     }
 
     .project-description-details {
-        min-height: 300px;
+        // min-height: 300px;
         p {
             margin-bottom: 10px;
         }

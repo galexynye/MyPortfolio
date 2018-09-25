@@ -1,12 +1,24 @@
 <template>
     <div class="subject">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+        <!-- <div class="section">
+            <h2 class="section-solo section-title">Contact</h2>
+        </div> -->
+        <div class="section">
+            <div class="section-column contact-email">
+                <h2 class="contact-title">Say hi :)</h2>
+                <p>If you are interested in hiring a front-end developer or just want to
+                    reach out, email me at <a href="mailto:g.alexander.nye@gmail.com?Subject=Hello%20again">g.alexander.nye@gmail.com</a>
+                </p>
+                <a href="mailto:g.alexander.nye@gmail.com?Subject=Hello%20again"></a>
+            </div>
+            <div class="section-column social">
+                <h2 class="contact-title">Social</h2>
+                <ul>
+                    <li v-for="links in social" :key="links.icon[1]"><a :href="links.link">{{links.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -14,6 +26,33 @@
 export default {
   data() {
     return {
+      social: [
+        {
+          name: 'Github',
+          icon: ['fab', 'github'],
+          link: 'https://github.com/galexynye',
+        },
+        {
+          name: 'Codepen',
+          icon: ['fab', 'codepen'],
+          link: 'https://codepen.io/galexynye/#',
+        },
+        {
+          name: 'Free Code Camp',
+          icon: ['fab', 'free-code-camp'],
+          link: 'https://www.freecodecamp.org/galexynye',
+        },
+        {
+          name: 'Youtube',
+          icon: ['fab', 'youtube'],
+          link: 'https://www.youtube.com/channel/UCRh5xwjVbFb0PI9JKOeZAIg',
+        },
+        {
+          name: 'IMDB',
+          icon: ['fab', 'imdb'],
+          link: 'http://www.imdb.com/name/nm5637976/',
+        },
+      ],
 
     };
   },
@@ -22,4 +61,40 @@ export default {
 
 <style lang="scss" scoped>
 
+    .contact-title {
+        color: $primary;
+    }
+
+    .contact-email {
+        font-size: 1.3rem;
+        a {
+                 &:hover {
+                    color: $accent;
+                }
+            }
+    }
+
+    .social{
+        font-size: 1.3rem;
+        li {
+            padding: 10px 0px;
+            a {
+                 &:hover {
+                    color: $accent;
+                }
+            }
+
+        }
+
+    }
+
+    @media screen and (max-width: 900px) {
+    .section {
+      flex-wrap: wrap;
+    }
+    .section-column {
+      margin: 10px;
+      width: 100%;
+    }
+  }
 </style>
