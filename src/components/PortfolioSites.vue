@@ -2,7 +2,6 @@
     <div class="subject">
         <div class="section">
             <h2 class="section-solo section-title">Websites</h2>
-
         </div>
         <div class="section">
                 <div class="workContainer section-column">
@@ -109,9 +108,6 @@ export default {
         max-width: 100%;
         opacity: 0;
         transition: .5s ease;
-        // background-color: alex-color('accent');
-        // background-color: #11191b;
-        /* background-color: rgb(61, 189, 61); */
     }
 
     .workContainer:hover .overlay {
@@ -138,7 +134,6 @@ export default {
         bottom: 0%;
         padding: 20px;
         text-align: center;
-
     }
 
 

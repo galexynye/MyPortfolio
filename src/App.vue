@@ -4,9 +4,24 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </div> -->
+    <the-menu />
     <router-view/>
+    <up-arrow />
   </div>
 </template>
+
+<script>
+import TheMenu from './components/TheMenu.vue';
+import UpArrow from './components/UpArrow.vue';
+
+export default {
+  components: {
+    TheMenu,
+    UpArrow,
+  },
+};
+</script>
+
 
 <style lang="scss">
 
@@ -17,7 +32,7 @@
 }
 
 .subject {
-  margin-bottom: 60px;
+  margin: 75px 30px;
 }
 
 .section {
@@ -48,8 +63,8 @@
 .section-title {
   color:$foreground;
   font-size: 1.2rem;
-  text-decoration: underline;
-  // margin-bottom: -5px;
+  // text-decoration: underline;
+  margin-bottom: 25px;
 }
 
 

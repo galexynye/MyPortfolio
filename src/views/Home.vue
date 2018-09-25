@@ -1,8 +1,9 @@
 <template>
   <div class="home">
       <landing />
-      <landing-canvas />
+      <About />
       <portfolio />
+      <contact />
       <social />
   </div>
 </template>
@@ -15,6 +16,8 @@ import Social from '@/components/Social.vue';
 import landing from '../components/Landing.vue';
 import Portfolio from './Portfolio.vue';
 import LandingCanvas from '../components/LandingCanvas.vue';
+import About from '../components/About.vue';
+import Contact from '../components/Contact.vue';
 
 export default {
   name: 'home',
@@ -24,6 +27,8 @@ export default {
     LandingCanvas,
     Social,
     Portfolio,
+    About,
+    Contact,
   },
 };
 </script>

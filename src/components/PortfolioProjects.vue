@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class="subject" >
     <div class="section">
         <h2 class="section-solo section-title">Web Projects</h2>
     </div>
@@ -89,9 +89,8 @@ export default {
           dataSlugHash: 'NYKRby',
           techIcons: [[['fab', 'vuejs'], '#4dba87']],
           href: 'https://codepen.io/galexynye/pen/NYKRby/',
-          description: `The difficulty/fun in building this classic Simon Game was not in actually 
-          coding the game but in doing the CSS. It took some time to get it together but I still find 
-          the way the game gets backlit with colors so satisfying.`,
+          description: `The difficulty/fun in building this classic Simon Game was creating the look of 
+          the game with CSS. I still find the way the game gets backlit with colors so satisfying.`,
         },
 
         {
@@ -182,21 +181,18 @@ export default {
     li {
         a{
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             border: none;
-            font-size: 1.35rem;
-            height: 40px;
+            font-size: 1.5rem;
+            height: 60px;
+            width: 260px;
             margin-bottom: 10px;
-            // margin-right: 50px;
-            background-color: $background;
             font-family: $primary-font;
-            width: 225px;
+
             &:hover {
-                // border-bottom: 1px solid $accent;
-                color: $accent;
+                 color: $accent;
                 cursor: pointer;
-                // border-right: 1px solid $accent;
-                // border-top: 1px solid $accent;
+                text-decoration: underline;
             }
         }
     }

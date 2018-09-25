@@ -24,32 +24,16 @@ export default {
       canvas.height = window.innerHeight;
       // canvas.style.transform = 'scale(0.8, 0.8)';
       const c = canvas.getContext('2d');
+      const startX = window.innerWidth / 3.7; // Distance from left
+      const startY = window.innerHeight / 3;
+      const masterScale = window.innerWidth / 1920;
 
-      window.addEventListener(
-        'resize',
-        () => {
-        // canvas.width = canvasContainer.offsetWidth;
-          console.log(window.innerWidth);
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          // const aadsfasdf = new LetterA(50, 100, 'blue');
-          // aadsfasdf.draw();
-        },
-      );
+
       // eslint-disable-next-line
     let mouse = {
         x: undefined,
         y: undefined,
       };
-
-      // window.addEventListener(
-      //   'mousemove',
-      //   (event) => {
-      //     mouse.x = event.x;
-      //     mouse.y = event.y;
-      //   // console.log(mouse);
-      //   },
-      // );
 
       function getMousePos(evt) {
         const rect = canvas.getBoundingClientRect();
@@ -62,7 +46,6 @@ export default {
 
       canvas.addEventListener('mousemove', (evt) => {
         const mousePos = getMousePos(evt);
-        console.log(mousePos.r);
         mouse.x = mousePos.x;
         mouse.y = mousePos.y;
       }, false);
@@ -101,7 +84,7 @@ export default {
           // A Dash
           c.beginPath();
           c.moveTo(30 * this.s + this.x + sx, 130 * this.s + this.y + sy + this.morph);
-          c.lineTo(78 * this.s + this.x + sx + this.morph, 130 * this.s + this.y + sy);
+          c.lineTo(78 * this.s + this.x + sx - this.morph, 130 * this.s + this.y + sy);
           c.strokeStyle = this.color;
           c.stroke();
         }
@@ -274,13 +257,13 @@ export default {
         draw() {
           const sx = this.s * this.spaceX;
           const sy = this.s * this.spaceY;
-          // Letter Y
+          // Letter Y Bottom |
           c.beginPath();
           c.moveTo(55 * this.s + this.x + sx + this.morph, 140 * this.s + this.y + sy);
           c.lineTo(55 * this.s + this.x + sx - this.morph, 300 * this.s + this.y + sy);
           c.strokeStyle = this.color;
           c.stroke();
-          // Letter Y
+          // Letter Y Top V
           c.beginPath();
           c.moveTo(0 * this.s + this.x + sx - this.morph, 0 * this.s + this.y + sy + this.morph);
           c.lineTo(55 * this.s + this.x + sx, 140 * this.s + this.y + sy + this.morph);
@@ -300,38 +283,27 @@ export default {
           this.draw();
         }
       }
-      // function WordAlex(x, y, color = 'black', scale = 1) {
-      //   const letA = new LetterA(x, y, color, scale, 0, 0);
-      //   const letL = new LetterL(x, y, color, scale, 140, 0);
-      //   const letE = new LetterE(x, y, color, scale, 235, 0);
-      //   const letX = new LetterX(x, y, color, scale, 330, 0);
-      //   letA.draw();
-      //   letL.draw();
-      //   letE.draw();
-      //   letX.draw();
-      // }
-      // function WordNye(x, y, color = 'black', scale = 1) {
-      //   const letN = new LetterN(x, y, color, scale, 0, 0);
-      //   const letY = new LetterY(x, y, color, scale, 135, 0);
-      //   const letE = new LetterE(x, y, color, scale, 265, 0);
-      //   letN.draw();
-      //   letY.draw();
-      //   letE.draw();
-      // }
 
+      // const TheA1 = new LetterA(550, 150, 'blue');
+      // const TheL1 = new LetterL(690, 150, 'green');
+      // const TheE1 = new LetterE(785, 150, 'purple');
+      // const TheX1 = new LetterX(880, 150, 'red');
+      // const TheN1 = new LetterN(880, 470, 'green');
+      // const TheY1 = new LetterY(1015, 470, 'orange');
+      // const TheE2 = new LetterE(1145, 470, 'purple');
+      // const startY = 275;
 
-      const TheA1 = new LetterA(450, 100, 'blue');
-      const TheL1 = new LetterL(590, 100, 'green');
-      const TheE1 = new LetterE(685, 100, 'purple');
-      const TheX1 = new LetterX(780, 100, 'red');
-      const TheN1 = new LetterN(780, 420, 'green');
-      const TheY1 = new LetterY(915, 420, 'orange');
-      const TheE2 = new LetterE(1045, 420, 'purple');
-      // const TheA = WordAlex();
+      const TheA1 = new LetterA(startX, startY, 'blue', masterScale);
+      const TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
+      const TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
+      const TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
+      const TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
+      const TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
+      const TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
+
       function animate() {
         requestAnimationFrame(animate);
         c.clearRect(0, 0, canvas.width, canvas.height);
-
         TheA1.update();
         TheL1.update();
         TheE1.update();
@@ -339,15 +311,28 @@ export default {
         TheN1.update();
         TheY1.update();
         TheE2.update();
-
-
-        console.log(window.scrollY);
       }
+
+      // window.addEventListener(
+      //   'resize',
+      //   () => {
+      //     canvas.width = window.innerWidth;
+      //     canvas.height = window.innerHeight;
+      //     startX = window.innerWidth / 3.7;
+      //     startY = window.innerHeight / 3;
+      //     masterScale = window.innerWidth / 1920;
+      //     TheA1 = new LetterA(startX, startY, 'blue', masterScale);
+      //     TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
+      //     TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
+      //     TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
+      //     TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
+      //     TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
+      //     TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
+      //   },
+      // );
 
       animate();
 
-      // WordAlex(120, 20, 'blue');
-      // WordNye(100, 350, 'blue');
 
     // Begin A Letter
     // c.beginPath();
@@ -367,8 +352,8 @@ export default {
         min-width: 100%;
     }
     canvas {
-        display: block;
-        // position: fixed;
+        // display: block;
+        position: absolute;
         // z-index: -1;
     }
 </style>
