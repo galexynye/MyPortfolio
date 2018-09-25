@@ -24,9 +24,9 @@ export default {
       canvas.height = window.innerHeight;
       // canvas.style.transform = 'scale(0.8, 0.8)';
       const c = canvas.getContext('2d');
-      const startX = window.innerWidth / 3.7; // Distance from left
-      const startY = window.innerHeight / 3;
-      const masterScale = window.innerWidth / 1920;
+      let startX = window.innerWidth / 3.7; // Distance from left
+      let startY = window.innerHeight / 3;
+      let masterScale = window.innerWidth / 1920;
 
 
       // eslint-disable-next-line
@@ -293,13 +293,13 @@ export default {
       // const TheE2 = new LetterE(1145, 470, 'purple');
       // const startY = 275;
 
-      const TheA1 = new LetterA(startX, startY, 'blue', masterScale);
-      const TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
-      const TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
-      const TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
-      const TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
-      const TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
-      const TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
+      let TheA1 = new LetterA(startX, startY, 'blue', masterScale);
+      let TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
+      let TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
+      let TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
+      let TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
+      let TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
+      let TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
 
       function animate() {
         requestAnimationFrame(animate);
@@ -313,23 +313,23 @@ export default {
         TheE2.update();
       }
 
-      // window.addEventListener(
-      //   'resize',
-      //   () => {
-      //     canvas.width = window.innerWidth;
-      //     canvas.height = window.innerHeight;
-      //     startX = window.innerWidth / 3.7;
-      //     startY = window.innerHeight / 3;
-      //     masterScale = window.innerWidth / 1920;
-      //     TheA1 = new LetterA(startX, startY, 'blue', masterScale);
-      //     TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
-      //     TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
-      //     TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
-      //     TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
-      //     TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
-      //     TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
-      //   },
-      // );
+      window.addEventListener(
+        'resize',
+        () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          startX = window.innerWidth / 3.7;
+          startY = window.innerHeight / 3;
+          masterScale = window.innerWidth / 1920;
+          TheA1 = new LetterA(startX, startY, 'blue', masterScale);
+          TheL1 = new LetterL(startX + 140 * masterScale, startY, 'green', masterScale);
+          TheE1 = new LetterE(startX + 235 * masterScale, startY, 'purple', masterScale);
+          TheX1 = new LetterX(startX + 330 * masterScale, startY, 'red', masterScale);
+          TheN1 = new LetterN(startX + 530 * masterScale, startY, 'green', masterScale);
+          TheY1 = new LetterY(startX + 665 * masterScale, startY, 'orange', masterScale);
+          TheE2 = new LetterE(startX + 795 * masterScale, startY, 'purple', masterScale);
+        },
+      );
 
       animate();
 
