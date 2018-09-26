@@ -13,7 +13,7 @@
                     </a>
                 </div>
                 <div class="workContainer section-column">
-                    <a href="https://www.midisequencing.com/">
+                    <a href="https://www.midisequencing.com/" target="blank">
                         <img :src="portfolio[1].image" alt="">
                         <div class='overlay' :style="{'background-color': portfolio[1].color}">
                             <h2 class="overlayTitle">{{portfolio[1].title}}</h2>

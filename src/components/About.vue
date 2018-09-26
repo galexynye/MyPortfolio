@@ -9,10 +9,10 @@
                     while composing film music in Venice, California.
                 </p>
                 <p>
-                    My interest started to peak as I watched Venice turn into "Silicon Beach". Meeting software engineers
+                    My interests started to peak as I watched Venice transform into "Silicon Beach". Meeting software engineers
                      coupled with the fact that our music studio was so reliant on computers
                     I started to study everything I could about computers and programming. I taught myself web development ultimately learning front-end
-                    frameworks/libraries like React and Vue through building various side projects.
+                    libraries/frameworks like React and Vue through building various side projects.
                 </p>
                 <p>I left California for Freiburg, Germany, continually advancing my skills as a developer.
                     The more I learn the more I want to know.</p>

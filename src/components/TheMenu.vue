@@ -7,7 +7,7 @@
                 <!-- <li><a href="#">Home</a></li> -->
                 <li><a href="#projects" v-scroll-to="'#projects'">Projects</a></li>
                 <li><a href="#about" v-scroll-to="'#about'">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact" v-scroll-to="'#contact'">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -39,8 +39,7 @@ export default {
 }
 
 .logo {
-    max-height: 30px;
-    min-height: 30px;
+    height: 30px;
     margin-left: 40px;
 }
 
@@ -62,5 +61,6 @@ export default {
 
     }
 }
+
 
 </style>

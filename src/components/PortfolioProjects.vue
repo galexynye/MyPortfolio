@@ -18,7 +18,7 @@
             </div>
         </div> -->
         <div class="section-column">
-             <div class="project-description">
+             <div class="project-description animated">
                 <h1>{{curProject.title}}</h1>
                     <div class="project-description-details">
                          <div class="project-description-about">
@@ -51,16 +51,26 @@ export default {
     return {
       loadedProj: false,
       curProject: {
-        title: 'Markdown Previewer',
+        title: 'Interactive Name',
         dataSlugHash: 'bxaoRo',
-        href: 'https://codepen.io/galexynye/pen/bxaoRo/',
-        techIcons: [[['fab', 'react'], '#61dafb'], [['fab', 'sass'], '#cf649a']],
-        description: `Building a Markdown previewer was the last project I did to earn my FCC Front-End Libraries certificate. 
-        Before I started building it I had a moment where I realized I already knew exactly where to start and what to code, it was just a matter of doing it. I knew
-        there'd probably be some questions, but I knew I'd find the answers. 
+        href: 'https://codepen.io/galexynye/pen/VGobxX',
+        techIcons: [[['fab', 'js'], '#f5de19']],
+        description: `Creating interactive content on an html <canvas> was something I wanted to do for a 
+        long time. I wrote my name to explode when hovered over by the mouse. By adding scale and position to the custom 
+        classes I used to make the letters I was able to make the animation responsive too. Scroll up to check it out.
         `,
       },
       projects: [
+        {
+          title: 'Interactive Name',
+          dataSlugHash: 'bxaoRo',
+          href: 'https://codepen.io/galexynye/pen/VGobxX',
+          techIcons: [[['fab', 'js'], '#f5de19']],
+          description: `Creating interactive content on an html <canvas> was something I wanted to do for a 
+        long time. I wrote my name to explode when hovered over by the mouse. By adding scale and position to the custom 
+        classes I used to make the letters I was able to make the animation responsive too. Scroll up to check it out.
+        `,
+        },
         {
           title: 'Markdown Previewer',
           dataSlugHash: 'bxaoRo',
@@ -124,15 +134,15 @@ export default {
         //   dataSlugHash: 'rJYqeX',
         //   href: 'https://codepen.io/galexynye/pen/rJYqeX/',
         // },
-        {
-          title: 'Vue Pomodoro',
-          dataSlugHash: 'PQaQYv',
-          techIcons: [[['fab', 'vuejs'], '#4dba87']],
-          href: 'https://codepen.io/galexynye/pen/PQaQYv/',
-          description: `Building this Pomodoro was a done as a part of my
-          Free Code Camp Front End Developer Certificate. The project helped solidfy my knowledge
-          of programming with time and callbacks.`,
-        },
+        // {
+        //   title: 'Vue Pomodoro',
+        //   dataSlugHash: 'PQaQYv',
+        //   techIcons: [[['fab', 'vuejs'], '#4dba87']],
+        //   href: 'https://codepen.io/galexynye/pen/PQaQYv/',
+        //   description: `Building this Pomodoro was a done as a part of my
+        //   Free Code Camp Front End Developer Certificate. The project helped solidfy my knowledge
+        //   of programming with time and callbacks.`,
+        // },
       ],
     };
   },

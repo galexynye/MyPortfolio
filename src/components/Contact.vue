@@ -1,8 +1,8 @@
 <template>
-    <div class="subject">
-        <!-- <div class="section">
+    <div id="contact" class="subject">
+        <div class="section">
             <h2 class="section-solo section-title">Contact</h2>
-        </div> -->
+        </div>
         <div class="section">
             <div class="section-column contact-email">
                 <h2 class="contact-title">Say hi :)</h2>
@@ -68,6 +68,7 @@ export default {
     .contact-email {
         font-size: 1.3rem;
         a {
+            color: $primary;
                  &:hover {
                     color: $accent;
                 }
