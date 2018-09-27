@@ -5,7 +5,7 @@
         </div>
         <div class="section">
             <div class="section-column story">
-                <p>Hi, my name is Alex Nye (it rhymes). Coding, to me, is a beatiful intersection of art and logic. My passion for computer science and programming started
+                <p>Hi, my name is Alex Nye. Coding, to me, is a beatiful intersection of art and logic. My passion for computer science and programming started
                     while composing film music in Venice, California.
                 </p>
                 <p>
