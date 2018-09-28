@@ -1,14 +1,18 @@
 <template>
     <div id="menu-container">
-        <font-awesome-icon v-if="!showMenu" @click="showMenu = !showMenu" icon='bars' size="lg" class="menu--button" />
-        <font-awesome-icon v-if="showMenu" @click="showMenu = !showMenu" icon='times' size="lg" class="menu--button" />
-        <div :class="{menu: true, menu__resize: !showMenu, animated: true, slideInDown: showMenu, slideOutUp: !showMenu}">
-            <!-- <a href="">Home</a> -->
-            <router-link to="/"><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt=""></router-link>
+        <transition
+            mode="out-in"
+            enter-active-class="animated rotateIn"
+        >
+            <font-awesome-icon v-if="!showMenu" @click="showMenu = !showMenu" icon='bars' size="lg" class="menu--button" key="hamburger" />
+            <font-awesome-icon v-if="showMenu" @click="showMenu = !showMenu" icon='times' size="lg" class="menu--button" key="theX" />
+        </transition>
+        <div :class="{menu: true, menu__resize: !showMenu, animated: true, slideInDown: showMenu, fadeOut: !showMenu}">
+            <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
             <ul>
-                <li><a href="#projects" v-scroll-to="'#projects'" @click="showMenu = !showMenu" >Projects</a></li>
-                <li><a href="#about" v-scroll-to="'#about'" @click="showMenu = !showMenu">About</a></li>
-                <li><a href="#contact" v-scroll-to="'#contact'" @click="showMenu = !showMenu" >Contact</a></li>
+                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
+                <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
+                <li><a href="#contact" v-scroll-to="'#contact'" @click="smallCloseMenu" >Contact</a></li>
             </ul>
         </div>
     </div>
@@ -18,17 +22,34 @@
 export default {
   data() {
     return {
-      showMenu: false,
+      showMenu: true,
+      isSmall: false,
     };
   },
-  mounted() {
+  beforeMount() {
+    if (window.innerWidth > 600) {
+      this.showMenu = true;
+      this.isSmall = false;
+    } else {
+      this.showMenu = false;
+      this.isSmall = true;
+    }
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 700) {
+      if (window.innerWidth > 600) {
         this.showMenu = true;
+        this.isSmall = false;
       } else {
         this.showMenu = false;
+        this.isSmall = true;
       }
     });
+  },
+  methods: {
+    smallCloseMenu() {
+      if (this.isSmall) {
+        this.showMenu = !this.showMenu;
+      }
+    },
   },
 };
 </script>
@@ -39,6 +60,7 @@ export default {
     position: absolute;
     width: 100%;
     z-index: 100;
+    text-align: right;
 }
 
 .menu {
@@ -53,7 +75,6 @@ export default {
     justify-content: flex-end;
     margin-right: 20px;
     background-color: #ffffff00;
-
     li {
         padding: 10px 25px;
         font-size: 1.4rem;
@@ -63,44 +84,48 @@ export default {
             cursor: pointer;
             color: $accent;
             }
-
         }
     }
 }
 
-  .logo {
-        height: 30px;
-        margin-left: 40px;
-    }
-   .menu__resize{
-        display: none;
-    }
+.logo {
+    height: 30px;
+    margin-left: 40px;
+}
+.menu__resize{
+    display: none;
+}
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 600px){
     .menu--button {
         display: none;
+
     }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 600px){
     .menu {
-        // display: none;
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 250px;
+        margin-right: 100%;
+        margin-top: -20px;
         text-align: left;
         ul {
             flex-flow: column;
+            align-items: flex-start;
         }
     }
 
     .logo {
-        margin-left: 0px;
+        margin-right: 100px;
     }
-
-
     .menu--button {
         color: $text;
         margin-top: 20px;
+        margin-right: 30px;
         &:hover {
             cursor: pointer;
         }

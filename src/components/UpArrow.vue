@@ -1,5 +1,5 @@
 <template>
-    <div id="up-arrow" v-scroll-to="'#app'">
+    <div id="up-arrow" v-scroll-to="'#app'" >
         <font-awesome-icon icon='angle-up' size="3x" />
     </div>
 </template>
@@ -25,14 +25,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #up-arrow{
+#up-arrow{
     position: fixed;
     display: none;
     bottom: 25px;
     right: 25px;
     color: $text;
     &:hover {
-      cursor: pointer;
+        cursor: pointer;
     }
-  }
+}
 </style>
