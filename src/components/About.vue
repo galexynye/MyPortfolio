@@ -5,21 +5,20 @@
         </div>
         <div class="section">
             <div class="section-column story">
-                <p>Hi, my name is Alex Nye. Coding, to me, is a beatiful intersection of art and logic. My passion for computer science and programming started
-                    while composing film music in Venice, California.
+                <p>Hi, my name is Alex Nye. I am a self-taught programmer working primarily
+                    on frontend web development. Coding for me, is a poetic intersection of art and logic.
                 </p>
-                <p>
-                    My interests started to peak as I watched Venice transform into "Silicon Beach". Meeting software engineers
-                     coupled with the fact that our music studio was so reliant on computers
-                    I started to study everything I could about computers and programming. I taught myself web development ultimately learning front-end
-                    libraries/frameworks like React and Vue through building various side projects.
+                <p>My interest in computer science and programming started when I was working for a composer doing film music in Venice, California.
+                    I watched as Venice transformed into "Silicon Beach", met software engineers and my programming hobby turned into a consuming passion
+                    and career interest.
                 </p>
-                <p>I left California for Freiburg, Germany, continually advancing my skills as a developer.
-                    The more I learn the more I want to know.</p>
+                <p>I left California for Freiburg, Germany, started a family, and am continually advancing my skills as a developer while working
+                    in music.
+                </p>
             </div>
             <div class="section-column">
                 <div class="about-img">
-                    <img src="../assets/RiftPic.jpg" alt="">
+                    <img src="../assets/AlexPic.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -52,7 +51,7 @@ export default {
     }
 
     img {
-        // border-radius: 50%;
+        // border-radius: 10px;
         max-width: 100%;
         margin: auto;
         display: block

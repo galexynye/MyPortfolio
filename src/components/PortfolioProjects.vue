@@ -1,5 +1,5 @@
 <template>
-<div class="subject">
+<div class="subject project-description">
     <div class="section">
         <h2 class="section-solo section-title">Web Projects</h2>
     </div>
@@ -18,7 +18,7 @@
             </div>
         </div> -->
         <div class="section-column">
-             <div class="project-description animated">
+             <div :class="{ animated: animateToggle, fadeIn: animateToggle, 'hide': !animateToggle, 'slower': true}">
                 <h1>{{curProject.title}}</h1>
                     <div class="project-description-details">
                          <div class="project-description-about">
@@ -49,6 +49,7 @@ export default {
   },
   data() {
     return {
+      animateToggle: true,
       loadedProj: false,
       curProject: {
         title: 'Interactive Name',
@@ -114,11 +115,6 @@ export default {
           to do the job. It was way more enjoyable than I antcipated, still, I'd rather use Vue or React.
           `,
         },
-        // {
-        //   title: '70s Wikipedia Searcher',
-        //   dataSlugHash: 'Vrjowv',
-        //   href: 'https://codepen.io/galexynye/pen/Vrjowv/',
-        // },
         {
           title: 'Twitch Checker',
           dataSlugHash: 'pdNwEb',
@@ -129,31 +125,21 @@ export default {
           satisfying.   
         `,
         },
-        // {
-        //   title: 'Vue Calculator',
-        //   dataSlugHash: 'rJYqeX',
-        //   href: 'https://codepen.io/galexynye/pen/rJYqeX/',
-        // },
-        // {
-        //   title: 'Vue Pomodoro',
-        //   dataSlugHash: 'PQaQYv',
-        //   techIcons: [[['fab', 'vuejs'], '#4dba87']],
-        //   href: 'https://codepen.io/galexynye/pen/PQaQYv/',
-        //   description: `Building this Pomodoro was a done as a part of my
-        //   Free Code Camp Front End Developer Certificate. The project helped solidfy my knowledge
-        //   of programming with time and callbacks.`,
-        // },
       ],
     };
   },
   methods: {
     previewProj(x) {
       // document.getElementById('projects').innerHTML();
+      this.animateToggle = false;
       if (this.curProject.title !== x.title) {
         this.loadedProj = false;
       }
-
       this.curProject = x;
+      setTimeout(() => {
+        this.animateToggle = true;
+      }, 100);
+
 
       // console.log(this.curProject.title);
     },
@@ -206,10 +192,15 @@ export default {
         }
     }
 
+    .project-description {
+        min-height: 410px;
+    }
+
     .project-description-details {
         // min-height: 300px;
         p {
             margin-bottom: 10px;
+            font-size: 1.2rem;
         }
         a {
             color: $primary;
