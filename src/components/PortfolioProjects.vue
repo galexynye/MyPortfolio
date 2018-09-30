@@ -18,7 +18,11 @@
             </div>
         </div> -->
         <div class="section-column">
-             <div :class="{ animated: animateToggle, fadeIn: animateToggle, 'hide': !animateToggle, 'slower': true}">
+            <transition
+                mode="out-in"
+                enter-active-class="animated fadeIn"
+            >
+            <div v-if="curProject">
                 <h1>{{curProject.title}}</h1>
                     <div class="project-description-details">
                          <div class="project-description-about">
@@ -35,6 +39,7 @@
                         </div>
                     </div>
             </div>
+            </transition>
         </div>
     </div>
 </div>
@@ -49,7 +54,6 @@ export default {
   },
   data() {
     return {
-      animateToggle: true,
       loadedProj: false,
       curProject: {
         title: 'Interactive Name',
@@ -130,18 +134,13 @@ export default {
   },
   methods: {
     previewProj(x) {
-      // document.getElementById('projects').innerHTML();
-      this.animateToggle = false;
       if (this.curProject.title !== x.title) {
         this.loadedProj = false;
       }
-      this.curProject = x;
+      this.curProject = false;
       setTimeout(() => {
-        this.animateToggle = true;
+        this.curProject = x;
       }, 100);
-
-
-      // console.log(this.curProject.title);
     },
     load() {
       this.loadedProj = true;
@@ -187,13 +186,12 @@ export default {
             &:hover {
                  color: $accent;
                 cursor: pointer;
-                text-decoration: underline;
             }
         }
     }
 
     .project-description {
-        min-height: 410px;
+        min-height: 430px;
     }
 
     .project-description-details {
@@ -221,14 +219,4 @@ export default {
         }
     }
 
-
-    @media screen and (max-width: 900px) {
-    .section {
-      flex-wrap: wrap;
-    }
-    .section-column {
-      margin: 10px;
-      width: 100%;
-    }
-  }
 </style>

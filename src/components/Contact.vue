@@ -89,13 +89,4 @@ export default {
 
     }
 
-    @media screen and (max-width: 900px) {
-    .section {
-      flex-wrap: wrap;
-    }
-    .section-column {
-      margin: 10px;
-      width: 100%;
-    }
-  }
 </style>

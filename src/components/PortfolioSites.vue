@@ -22,31 +22,6 @@
                     </a>
                 </div>
         </div>
-        <!-- <div class="section">
-                <div class="workContainer section-column">
-                    <img :src="portfolio[1].image" alt="">
-                    <div class='overlay' :style="{'background-color': portfolio[1].color}">
-                        <h2 class="overlayTitle">{{portfolio[1].title}}</h2>
-                        <p class="overlayCaption">{{portfolio[1].caption}}</p>
-                    </div>
-                </div>
-                <div class="workContainer section-column">
-                    <img :src="portfolio[2].image" alt="">
-                    <div class='overlay' :style="{'background-color': portfolio[2].color}">
-                        <h2 class="overlayTitle">{{portfolio[2].title}}</h2>
-                        <p class="overlayCaption">{{portfolio[2].caption}}</p>
-                    </div>
-                </div>
-        </div> -->
-        <!-- <div id="websites" class="section">
-            <div class="workContainer section-column" v-for="work in portfolio" :key="work.title" >
-            <img :src="work.image" alt="">
-                <div class='overlay' :style="{'background-color': work.color}">
-                    <h2 class="overlayTitle">{{work.title}}</h2>
-                    <p class="overlayCaption">{{work.caption}}</p>
-                </div>
-            </div>
-        </div> -->
     </div>
 
 </template>
@@ -77,7 +52,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 
     .workContainer {
         position: relative;
@@ -125,27 +99,18 @@ export default {
         bottom: 0%;
         padding: 20px;
         text-align: center;
+        max-height: 50%;
     }
 
-
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1100px){
         .overlayTitle{
-            top: 30%;
-            font-size: 1rem;
+            font-size: 1.5rem;
+        }
+        .overlayCaption{
+            display: none;
         }
 
     }
-
-
-  @media screen and (max-width: 700px) {
-    .section {
-      flex-wrap: wrap;
-    }
-    .section-column {
-      margin: 10px;
-      width: 100%;
-    }
-  }
 
 
 </style>

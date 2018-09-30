@@ -12,7 +12,7 @@
                     I watched as Venice transformed into "Silicon Beach", met software engineers and my programming hobby turned into a consuming passion
                     and career interest.
                 </p>
-                <p>I left California for Freiburg, Germany, started a family, and am continually advancing my skills as a developer while working
+                <p>I left California for Freiburg, Germany to be with my wife, we started a family, and I'm continually advancing my skills as a developer while working
                     in music.
                 </p>
             </div>
@@ -57,13 +57,4 @@ export default {
         display: block
     }
 
-    @media screen and (max-width: 900px) {
-    .section {
-      flex-wrap: wrap;
-    }
-    .section-column {
-      margin: 10px;
-      width: 600px;
-    }
-  }
 </style>

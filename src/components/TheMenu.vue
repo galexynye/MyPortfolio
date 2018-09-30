@@ -67,7 +67,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1600px;
+    max-width: 100%;
     margin: 25px auto;
     ul {
     list-style-type: none;
