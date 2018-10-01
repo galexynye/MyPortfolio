@@ -7,25 +7,23 @@
             <font-awesome-icon v-if="!showMenu" @click="showMenu = !showMenu" icon='bars' size="lg" class="menu--button" key="hamburger" />
             <font-awesome-icon v-if="showMenu" @click="showMenu = !showMenu" icon='times' size="lg" class="menu--button" key="theX" />
         </transition>
-        <div :class="{'menu-big': true, menu__resposive: !showMenu}">
+        <!-- big menu -->
+        <div class="menu-big">
             <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
             <ul>
-                <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
-                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
-                <li><a href="#contact" v-scroll-to="'#contact'" @click="smallCloseMenu" >Contact</a></li>
+                <li v-for="link in menu" :key="link.name" ><a :href="link.href" v-scroll-to="link.scrollTo" @click="smallCloseMenu">{{link.name}}</a></li>
             </ul>
         </div>
+        <!-- small menu -->
         <transition
             mode="out-in"
             enter-active-class="animated slideInDown"
             leave-active-class="animated slideOutLeft"
         >
-        <div v-if="showMenu" :class="{'menu-small': true}">
+        <div v-if="showMenu" class="menu-small">
             <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
             <ul>
-                <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
-                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
-                <li><a href="#contact" v-scroll-to="'#contact'" @click="smallCloseMenu" >Contact</a></li>
+                <li v-for="link in menu" :key="link.name" ><a :href="link.href" v-scroll-to="link.scrollTo" @click="smallCloseMenu">{{link.name}}</a></li>
             </ul>
         </div>
         </transition>
@@ -37,6 +35,11 @@ export default {
   data() {
     return {
       showMenu: false,
+      menu: [
+        { href: '#about', scrollTo: '#about', name: 'About' },
+        { href: '#projects', scrollTo: '#projects', name: 'Projects' },
+        { href: '#contact', scrollTo: '#contact', name: 'Contact' },
+      ],
     };
   },
   beforeMount() {
@@ -48,9 +51,7 @@ export default {
   },
   methods: {
     smallCloseMenu() {
-      if (this.isSmall) {
-        this.showMenu = !this.showMenu;
-      }
+      this.showMenu = !this.showMenu;
     },
   },
 };
@@ -98,9 +99,6 @@ export default {
     margin-left: 40px;
     z-index: 1000;
 }
-.menu__resize{
-    display: none;
-}
 
 @media screen and (min-width: 600px){
     .menu--button {
@@ -128,29 +126,22 @@ export default {
             flex-flow: column;
             align-items: flex-start;
             li {
-        padding: 10px 25px;
-        font-size: 1.4rem;
-        }
-        a {
-            &:hover{
-            cursor: pointer;
-            color: $accent;
+                padding: 10px 25px;
+                font-size: 1.4rem;
+             }
+            a {
+                &:hover{
+                cursor: pointer;
+                color: $accent;
+                }
             }
         }
-
-
-        }
-
     }
-
-    .menu__resposive{
-        display: none;
-    }
-
     .logo {
         margin-right: 100px;
     }
     .menu--button {
+        z-index: 10000;
         color: $text;
         margin-top: 20px;
         margin-right: 30px;

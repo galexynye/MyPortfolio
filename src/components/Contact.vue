@@ -5,7 +5,7 @@
         </div>
         <div class="section">
             <div class="section-column contact-email">
-                <h2 class="contact-title">Say hi :)</h2>
+                <!-- <h2 class="contact-title">Say hi :)</h2> -->
                 <p>If you are interested in hiring a front-end developer or just want to
                     reach out, email me at <a href="mailto:g.alexander.nye@gmail.com?Subject=Hello%20again">g.alexander.nye@gmail.com</a>
                 </p>

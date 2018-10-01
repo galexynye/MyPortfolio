@@ -1,5 +1,5 @@
 <template>
-<div class="subject project-description">
+<div class="project-description">
     <div class="section">
         <h2 class="section-solo section-title">Web Projects</h2>
     </div>
@@ -17,9 +17,9 @@
                 <iframe  @load="load" scrolling='no' :title='curProject.title' :src="`//codepen.io/galexynye/embed/${curProject.dataSlugHash}/?height=600&theme-id=0&default-tab=result&embed-version=2`" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
             </div>
         </div> -->
-        <div class="section-column">
+        <div class="section-column project-description">
             <transition
-                mode="out-in"
+
                 enter-active-class="animated fadeIn"
             >
             <div v-if="curProject">
@@ -151,7 +151,6 @@ export default {
 <style lang="scss" scoped>
 
     // $height-tall: 600px;
-
     h1 {
       color: $primary;
       margin-top: 0px;
@@ -189,7 +188,9 @@ export default {
     }
 
     .project-description {
-        min-height: 420px;
+        @extend .subject;
+        margin-bottom: 0px;
+        min-height: 350px;
     }
 
     .project-description-details {
