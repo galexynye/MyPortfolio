@@ -1,5 +1,5 @@
 <template>
-    <div id="down-arrow" class="animated swing slow infinite" v-scroll-to="'#projects'">
+    <div id="down-arrow" class="animated bounce fast infinite" v-scroll-to="'#about'">
         <font-awesome-icon icon='angle-down' size="3x" />
     </div>
 </template>

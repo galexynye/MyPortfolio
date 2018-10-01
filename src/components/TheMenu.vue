@@ -3,18 +3,25 @@
         <transition
             mode="out-in"
             enter-active-class="animated rotateIn"
+
         >
             <font-awesome-icon v-if="!showMenu" @click="showMenu = !showMenu" icon='bars' size="lg" class="menu--button" key="hamburger" />
             <font-awesome-icon v-if="showMenu" @click="showMenu = !showMenu" icon='times' size="lg" class="menu--button" key="theX" />
         </transition>
-        <div :class="{menu: true, menu__resize: !showMenu, animated: true, slideInDown: showMenu, fadeOut: !showMenu}">
+        <transition
+            mode="out-in"
+            enter-active-class="animated slideInLeft"
+            leave-active-class="animated slideOutLeft"
+        >
+        <div v-if="showMenu" :class="{menu: true}">
             <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
             <ul>
-                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
                 <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
+                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
                 <li><a href="#contact" v-scroll-to="'#contact'" @click="smallCloseMenu" >Contact</a></li>
             </ul>
         </div>
+        </transition>
     </div>
 </template>
 
@@ -23,24 +30,23 @@ export default {
   data() {
     return {
       showMenu: true,
-      isSmall: false,
+      startBig: true,
     };
   },
   beforeMount() {
     if (window.innerWidth > 600) {
       this.showMenu = true;
-      this.isSmall = false;
+      this.startBig = true;
     } else {
       this.showMenu = false;
-      this.isSmall = true;
+      this.startBig = false;
     }
+
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 600) {
-        this.showMenu = true;
-        this.isSmall = false;
-      } else {
+      if (window.innerWidth < 600 && this.startBig) {
         this.showMenu = false;
-        this.isSmall = true;
+      } else {
+        this.showMenu = true;
       }
     });
   },
@@ -91,6 +97,7 @@ export default {
 .logo {
     height: 30px;
     margin-left: 40px;
+    z-index: 1000;
 }
 .menu__resize{
     display: none;
@@ -109,7 +116,7 @@ export default {
         flex-flow: column;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 250px;
+        width: 120px;
         margin-right: 100%;
         margin-top: -20px;
         text-align: left;

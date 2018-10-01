@@ -113,9 +113,7 @@ export default {
           techIcons: [[['fab', 'js'], '#f5de19']],
           href: 'https://codepen.io/galexynye/pen/QQoJQo/',
           description: `I made the fortunate mistake of not researching an algorithm to help build
-          an unbeatable tic-tac-toe "AI". My solution isn't elegant, or pretty, but I built this game in order to learn and 
-          I learned so much more by creating my own algorithm rather than implementing someone else's. 
-          This project was also very enlightning because it was the first time I used pure Vanilla Javascript 
+          an unbeatable tic-tac-toe "AI", creating my own instead. This project was also very enlightning because it was the first time I used pure Vanilla Javascript 
           to do the job. It was way more enjoyable than I antcipated, still, I'd rather use Vue or React.
           `,
         },
@@ -191,7 +189,7 @@ export default {
     }
 
     .project-description {
-        min-height: 430px;
+        min-height: 420px;
     }
 
     .project-description-details {

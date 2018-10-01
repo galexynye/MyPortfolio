@@ -1,8 +1,9 @@
 <template>
   <div class="home">
       <landing />
+      <about />
       <portfolio />
-      <About />
+
       <contact />
       <social />
   </div>
