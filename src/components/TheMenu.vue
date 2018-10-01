@@ -3,17 +3,24 @@
         <transition
             mode="out-in"
             enter-active-class="animated rotateIn"
-
         >
             <font-awesome-icon v-if="!showMenu" @click="showMenu = !showMenu" icon='bars' size="lg" class="menu--button" key="hamburger" />
             <font-awesome-icon v-if="showMenu" @click="showMenu = !showMenu" icon='times' size="lg" class="menu--button" key="theX" />
         </transition>
+        <div :class="{'menu-big': true, menu__resposive: !showMenu}">
+            <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
+            <ul>
+                <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
+                <li><a href="#projects" v-scroll-to="'#projects'" @click="smallCloseMenu" >Projects</a></li>
+                <li><a href="#contact" v-scroll-to="'#contact'" @click="smallCloseMenu" >Contact</a></li>
+            </ul>
+        </div>
         <transition
             mode="out-in"
-            enter-active-class="animated slideInLeft"
+            enter-active-class="animated slideInDown"
             leave-active-class="animated slideOutLeft"
         >
-        <div v-if="showMenu" :class="{menu: true}">
+        <div v-if="showMenu" :class="{'menu-small': true}">
             <router-link to="/" ><img src="../assets/TheSexyRussians_ICON.svg" class="logo" alt="" @click="smallCloseMenu"></router-link>
             <ul>
                 <li><a href="#about" v-scroll-to="'#about'" @click="smallCloseMenu">About</a></li>
@@ -29,24 +36,13 @@
 export default {
   data() {
     return {
-      showMenu: true,
-      startBig: true,
+      showMenu: false,
     };
   },
   beforeMount() {
-    if (window.innerWidth > 600) {
-      this.showMenu = true;
-      this.startBig = true;
-    } else {
-      this.showMenu = false;
-      this.startBig = false;
-    }
-
     window.addEventListener('resize', () => {
-      if (window.innerWidth < 600 && this.startBig) {
+      if (window.innerWidth > 600) {
         this.showMenu = false;
-      } else {
-        this.showMenu = true;
       }
     });
   },
@@ -69,7 +65,7 @@ export default {
     text-align: right;
 }
 
-.menu {
+.menu-big {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,6 +89,9 @@ export default {
         }
     }
 }
+.menu-small {
+    display: none;
+}
 
 .logo {
     height: 30px;
@@ -111,7 +110,12 @@ export default {
 }
 
 @media screen and (max-width: 600px){
-    .menu {
+    .menu-big {
+        display: none;
+    }
+    .menu-small {
+        // @extend .menu-big;
+        display: flex;
         background-color: rgb(255, 255, 255);
         flex-flow: column;
         justify-content: flex-start;
@@ -123,7 +127,24 @@ export default {
         ul {
             flex-flow: column;
             align-items: flex-start;
+            li {
+        padding: 10px 25px;
+        font-size: 1.4rem;
         }
+        a {
+            &:hover{
+            cursor: pointer;
+            color: $accent;
+            }
+        }
+
+
+        }
+
+    }
+
+    .menu__resposive{
+        display: none;
     }
 
     .logo {
