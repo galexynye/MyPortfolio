@@ -39,9 +39,9 @@ export default {
           color: '#11191b',
         },
         {
-          title: 'Midi Sequencing',
+          title: 'Music Sequencing',
           image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
-          caption: 'A blog about music production in the process of an upgrade to the JAMstack with with Gatsby.js/React. This version was made with Wordpress.',
+          caption: 'A blog about music production made with with Gatsby.js/React and deployed on Netifly.',
           color: '#fbd703',
         },
       ],

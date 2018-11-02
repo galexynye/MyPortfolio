@@ -1,6 +1,6 @@
 <template>
-    <div id="down-arrow" class="animated bounce fast infinite" v-scroll-to="'#about'">
-        <font-awesome-icon icon='angle-down' size="3x" />
+    <div id="down-arrow" class="" v-scroll-to="'#about'">
+        <font-awesome-icon icon='angle-down' size="3x" class="animated bounce slow infinite" />
     </div>
 </template>
 
