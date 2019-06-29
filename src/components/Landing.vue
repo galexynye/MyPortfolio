@@ -9,13 +9,13 @@
 <script>
 // @ is an alias to /src
 import LandingCanvas from '../components/LandingCanvas.vue';
-import DownArrow from '../components/DownArrow.vue';
+// import DownArrow from '../components/DownArrow.vue';
 
 export default {
   name: 'home',
   components: {
     LandingCanvas,
-    DownArrow,
+    // DownArrow,
   },
   mounted() {
     const landing = document.getElementById('landing');

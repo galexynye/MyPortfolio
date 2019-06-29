@@ -1,6 +1,6 @@
 <template>
     <div class="social">
-        <a href="mailto:g.alexander.nye@gmail.com">g.alexander.nye@gmail.com</a>
+        <a href="mailto:alex@grimmforestmusic.com">alex@grimmforestmusic.com</a>
         <div>
             <a v-for="x in social" :key="x.icon[1]" :href="x.link" target="blank">
                 <font-awesome-icon :icon='x.icon' size="lg" />
@@ -14,21 +14,25 @@ export default {
   data() {
     return {
       social: [
-        {
-          icon: ['fab', 'github'],
-          link: 'https://github.com/galexynye',
-        },
-        {
-          icon: ['fab', 'codepen'],
-          link: 'https://codepen.io/galexynye/#',
-        },
-        {
-          icon: ['fab', 'free-code-camp'],
-          link: 'https://www.freecodecamp.org/galexynye',
-        },
+        // {
+        //   icon: ['fab', 'github'],
+        //   link: 'https://github.com/galexynye',
+        // },
+        // {
+        //   icon: ['fab', 'codepen'],
+        //   link: 'https://codepen.io/galexynye/#',
+        // },
+        // {
+        //   icon: ['fab', 'free-code-camp'],
+        //   link: 'https://www.freecodecamp.org/galexynye',
+        // },
         {
           icon: ['fab', 'youtube'],
           link: 'https://www.youtube.com/channel/UCRh5xwjVbFb0PI9JKOeZAIg',
+        },
+        {
+          icon: ['fab', 'instagram'],
+          link: 'https://www.instagram.com/saywellmusic',
         },
         {
           icon: ['fab', 'imdb'],

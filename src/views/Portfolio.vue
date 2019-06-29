@@ -2,7 +2,7 @@
     <div id="projects">
       <!-- <portfolio-sites-masonry /> -->
       <portfolio-sites />
-      <portfolio-Projects />
+      <!-- <portfolio-Projects /> -->
     </div>
 </template>
 

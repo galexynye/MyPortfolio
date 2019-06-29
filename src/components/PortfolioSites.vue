@@ -1,11 +1,12 @@
 <template>
     <div class="subject">
         <div class="section">
-            <h2 class="section-solo section-title">Websites</h2>
+            <h2 class="section-solo section-title">Click to Visit a Project Sites</h2>
         </div>
         <div class="section">
                 <div class="workContainer section-column">
-                    <a href="http://grimmforestmusic.com.s3-website-us-east-1.amazonaws.com" target="blank"><img :src="portfolio[0].image" alt="">
+                    <!-- <a href="http://grimmforestmusic.com.s3-website-us-east-1.amazonaws.com" target="blank"><img :src="portfolio[0].image" alt=""> -->
+                    <a href="http://www.grimmforestmusic.com"><img :src="portfolio[0].image" alt="">
                         <div class='overlay' :style="{'background-color': portfolio[0].color}">
                             <h2 class="overlayTitle">{{portfolio[0].title}}</h2>
                             <p class="overlayCaption">{{portfolio[0].caption}}</p>
@@ -13,7 +14,7 @@
                     </a>
                 </div>
                 <div class="workContainer section-column">
-                    <a href="https://www.midisequencing.com/" target="blank">
+                    <a href="https://www.musicsequencing.com/">
                         <img :src="portfolio[1].image" alt="">
                         <div class='overlay' :style="{'background-color': portfolio[1].color}">
                             <h2 class="overlayTitle">{{portfolio[1].title}}</h2>
@@ -33,15 +34,15 @@ export default {
     return {
       portfolio: [
         {
-          title: 'Grimm Forest',
+          title: 'Grimm Forest Music',
           image: require('../assets/WebSites/GFM/GFM_WhiteTree_809x500.png'),
-          caption: 'A music website with a searchable playlist / custom playlist feature that is stored on local storage. Features a music player that renders waveforms. Made with VueJs and AWS for the backend. Work in progress.',
+          caption: 'My commercial studio website.',
           color: '#11191b',
         },
         {
           title: 'Music Sequencing',
           image: require('../assets/WebSites/MS/MS_809x500_LogoRainbow.png'),
-          caption: 'A blog about music production made with with Gatsby.js/React and deployed on Netifly.',
+          caption: 'A blog about music production.',
           color: '#fbd703',
         },
       ],
@@ -60,7 +61,7 @@ export default {
     img {
         display: block;
         max-width: 100%;
-        opacity: .8;
+        opacity: .95;
     }
 
     .overlay {

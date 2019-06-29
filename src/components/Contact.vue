@@ -6,17 +6,16 @@
         <div class="section">
             <div class="section-column contact-email">
                 <!-- <h2 class="contact-title">Say hi :)</h2> -->
-                <p>If you are interested in hiring a front-end developer or just want to
-                    reach out, email me at <a href="mailto:g.alexander.nye@gmail.com?Subject=Hello%20again">g.alexander.nye@gmail.com</a>
+                <p>Happy to hear from people looking for original music, a producer, lessons or those who just want to say hi. Email me <a href="mailto:alex@grimmforestmusic.com?Subject=Hello%20again">alex@grimmforestmusic.com</a>
                 </p>
-                <a href="mailto:g.alexander.nye@gmail.com?Subject=Hello%20again"></a>
+                <a href="mailto:alex@grimmforestmusic.com?Subject=Hello%20again"></a>
             </div>
-            <div class="section-column social">
+            <!-- <div class="section-column social">
                 <h2 class="contact-title">Social</h2>
                 <ul>
                     <li v-for="links in social" :key="links.icon[1]"><a :href="links.link">{{links.name}}</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
 
     </div>
