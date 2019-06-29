@@ -1,7 +1,7 @@
 <template>
     <div class="subject">
         <div class="section">
-            <h2 class="section-solo section-title">Click to Visit a Project Sites</h2>
+            <h2 class="section-solo section-title">Click to Visit a Project Site</h2>
         </div>
         <div class="section">
                 <div class="workContainer section-column">
